@@ -1,0 +1,35 @@
+{
+  "name": "@stdlib/math-base-special-heaviside",
+  "version": "0.0.0",
+  "description": "Evaluate the Heaviside function.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./mod.js",
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/math-base-special-heaviside.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "keywords": [
+    "stdlib",
+    "stdmath",
+    "mathematics",
+    "math",
+    "heaviside",
+    "discontinuous",
+    "unit step function",
+    "step function",
+    "distribution",
+    "dist",
+    "ramp",
+    "digital signal processing",
+    "dsp"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}

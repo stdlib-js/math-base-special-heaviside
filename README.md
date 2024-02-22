@@ -110,6 +110,11 @@ H(x) = \begin{cases} x & \textrm{if}\ x \geq 0 \\ 0 & \textrm{if}\ x \lt 0\end{c
 To use in Observable,
 
 ```javascript
+heaviside = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@umd/browser.js' )
+```
+The previous example will load the latest bundled code from the umd branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-base-special-heaviside/tags). For example,
+
+```javascript
 heaviside = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@v0.2.1-umd/browser.js' )
 ```
 
@@ -122,7 +127,7 @@ var heaviside = require( 'path/to/vendor/umd/math-base-special-heaviside/index.j
 To include the bundle in a webpage,
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@v0.2.1-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@umd/browser.js"></script>
 ```
 
 If no recognized module system is present, access bundle contents via the global scope:
@@ -191,7 +196,7 @@ v = heaviside( 0.0, 'right-continuous' );
 <html lang="en">
 <body>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-base-linspace@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@v0.2.1-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
 

@@ -108,7 +108,7 @@ H(x) = \begin{cases} x & \textrm{if}\ x \geq 0 \\ 0 & \textrm{if}\ x \lt 0\end{c
 ## Usage
 
 ```javascript
-import heaviside from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@deno/mod.js';
+import heaviside from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@v0.2.1-deno/mod.js';
 ```
 
 #### heaviside( x\[, continuity] )
@@ -164,7 +164,7 @@ v = heaviside( 0.0, 'right-continuous' );
 
 ```javascript
 import linspace from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-linspace@deno/mod.js';
-import heaviside from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@deno/mod.js';
+import heaviside from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@v0.2.1-deno/mod.js';
 
 var x = linspace( -10.0, 10.0, 101 );
 

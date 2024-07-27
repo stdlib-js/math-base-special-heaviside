@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/math-base-special-heaviside",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Evaluate the Heaviside function.",
   "license": "Apache-2.0",
   "author": {

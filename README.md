@@ -108,6 +108,11 @@ H(x) = \begin{cases} x & \textrm{if}\ x \geq 0 \\ 0 & \textrm{if}\ x \lt 0\end{c
 ## Usage
 
 ```javascript
+import heaviside from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-base-special-heaviside/tags). For example,
+
+```javascript
 import heaviside from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@v0.2.3-esm/index.mjs';
 ```
 
@@ -170,7 +175,7 @@ v = heaviside( 0.0, 'right-continuous' );
 
 import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-uniform@esm/index.mjs';
 import logEachMap from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@esm/index.mjs';
-import heaviside from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@v0.2.3-esm/index.mjs';
+import heaviside from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@esm/index.mjs';
 
 var opts = {
     'dtype': 'float64'

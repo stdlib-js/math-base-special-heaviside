@@ -101,19 +101,32 @@ H(x) = \begin{cases} x & \textrm{if}\ x \geq 0 \\ 0 & \textrm{if}\ x \lt 0\end{c
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-base-special-heaviside
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import heaviside from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@esm/index.mjs';
-```
-The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-base-special-heaviside/tags). For example,
-
-```javascript
-import heaviside from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@v0.2.3-esm/index.mjs';
+var heaviside = require( '@stdlib/math-base-special-heaviside' );
 ```
 
 #### heaviside( x\[, continuity] )
@@ -167,15 +180,10 @@ v = heaviside( 0.0, 'right-continuous' );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-uniform@esm/index.mjs';
-import logEachMap from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@esm/index.mjs';
-import heaviside from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-heaviside@esm/index.mjs';
+```javascript
+var uniform = require( '@stdlib/random-array-uniform' );
+var logEachMap = require( '@stdlib/console-log-each-map' );
+var heaviside = require( '@stdlib/math-base-special-heaviside' );
 
 var opts = {
     'dtype': 'float64'
@@ -183,15 +191,109 @@ var opts = {
 var x = uniform( 101, -10.0, 10.0, opts );
 
 logEachMap( 'H(%0.4f) = %0.4f', x, heaviside );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
 
 <!-- /.examples -->
+
+<!-- C interface documentation. -->
+
+* * *
+
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/math/base/special/heaviside.h"
+```
+
+#### stdlib_base_heaviside( x, continuity )
+
+Evaluates the [Heaviside function][heaviside-function] for a double-precision floating-point number.
+
+```c
+double y = stdlib_base_heaviside( 0.0, STDLIB_BASE_HEAVISIDE_CONTINUITY_HALF_MAXIMUM );
+// returns 0.5
+
+y = stdlib_base_heaviside( 0.0, STDLIB_BASE_HEAVISIDE_CONTINUITY_LEFT_CONTINUOUS );
+// returns 0.0
+```
+
+The function accepts the following arguments:
+
+-   **x**: `[in] double` input value.
+-   **continuity**: `[in] enum STDLIB_BASE_HEAVISIDE_CONTINUITY` continuity option.
+
+The `continuity` parameter may be one of the following values:
+
+-   `STDLIB_BASE_HEAVISIDE_CONTINUITY_HALF_MAXIMUM`: if `x == 0`, the function returns `0.5`.
+-   `STDLIB_BASE_HEAVISIDE_CONTINUITY_LEFT_CONTINUOUS`: if `x == 0`, the function returns `0.0`.
+-   `STDLIB_BASE_HEAVISIDE_CONTINUITY_RIGHT_CONTINUOUS`: if `x == 0`, the function returns `1.0`.
+-   `STDLIB_BASE_HEAVISIDE_CONTINUITY_DISCONTINUOUS`: if `x == 0`, the function returns `NaN`.
+
+If provided a `continuity` argument which is not one of the enumeration constants listed above, the function returns `NaN` for `x == 0`, behaving like the discontinuous case.
+
+```c
+double stdlib_base_heaviside( const double x, const enum STDLIB_BASE_HEAVISIDE_CONTINUITY continuity );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/math/base/special/heaviside.h"
+#include <stdio.h>
+
+int main( void ) {
+    const double x[] = { -4.0, -3.0, -2.0, -1.0, 0.0, 1.0, 2.0, 3.0, 4.0, 5.0 };
+
+    double y;
+    int i;
+    for ( i = 0; i < 10; i++ ) {
+        y = stdlib_base_heaviside( x[ i ], STDLIB_BASE_HEAVISIDE_CONTINUITY_HALF_MAXIMUM );
+        printf( "H(%lf) = %lf\n", x[ i ], y );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -216,7 +318,7 @@ logEachMap( 'H(%0.4f) = %0.4f', x, heaviside );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -246,8 +348,8 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/math-base-special-heaviside.svg
 [npm-url]: https://npmjs.org/package/@stdlib/math-base-special-heaviside
 
-[test-image]: https://github.com/stdlib-js/math-base-special-heaviside/actions/workflows/test.yml/badge.svg?branch=v0.2.3
-[test-url]: https://github.com/stdlib-js/math-base-special-heaviside/actions/workflows/test.yml?query=branch:v0.2.3
+[test-image]: https://github.com/stdlib-js/math-base-special-heaviside/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/math-base-special-heaviside/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/math-base-special-heaviside/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/math-base-special-heaviside?branch=main
@@ -283,7 +385,7 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/math/base/special/ramp]: https://github.com/stdlib-js/math-base-special-ramp/tree/esm
+[@stdlib/math/base/special/ramp]: https://github.com/stdlib-js/math-base-special-ramp
 
 <!-- </related-links> -->
 

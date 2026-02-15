@@ -2,6 +2,50 @@
 
 > Package changelog.
 
+<section class="release" id="unreleased">
+
+## Unreleased (2026-02-15)
+
+<section class="features">
+
+### Features
+
+-   [`53aaf81`](https://github.com/stdlib-js/stdlib/commit/53aaf8135f7feba8476da758d895cc24da20caad) - add C implementation for `math/base/special/heaviside` [(#10196)](https://github.com/stdlib-js/stdlib/pull/10196)
+
+</section>
+
+<!-- /.features -->
+
+<section class="commits">
+
+### Commits
+
+<details>
+
+-   [`53aaf81`](https://github.com/stdlib-js/stdlib/commit/53aaf8135f7feba8476da758d895cc24da20caad) - **feat:** add C implementation for `math/base/special/heaviside` [(#10196)](https://github.com/stdlib-js/stdlib/pull/10196) _(by Kamal Singh Rautela)_
+
+</details>
+
+</section>
+
+<!-- /.commits -->
+
+<section class="contributors">
+
+### Contributors
+
+A total of 1 person contributed to this release. Thank you to this contributor:
+
+-   Kamal Singh Rautela
+
+</section>
+
+<!-- /.contributors -->
+
+</section>
+
+<!-- /.release -->
+
 <section class="release" id="v0.2.3">
 
 ## 0.2.3 (2026-02-05)
